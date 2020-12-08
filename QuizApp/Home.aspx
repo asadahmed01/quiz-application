@@ -14,7 +14,7 @@
         h1, h2, h4{
             font-family:sans-serif;
             font-weight:700;
-            margin: 20px 0 15px 0;
+            margin: 10px 0 15px 0;
         }
         footer{
             margin-top: 150px;
@@ -98,7 +98,7 @@
             color:orangered;
         }
         #studentName{
-            color:#245501;
+            color:lightseagreen;
 
         }
         #result{
@@ -121,8 +121,10 @@
 
             } else {
                 document.getElementById('timer').innerHTML = timeLeft + ' seconds remaining';
+               <%= --num%>
                 timeLeft--;
             }
+            
         }
     </script>
 </head>
@@ -135,7 +137,7 @@
     <form id="form1" runat="server" >
         <div id="someDiv" runat="server">
             <h4 id="some" runat="server"></h4>
-            <h4 id="timer" runat="server"></h4>
+            <h4 id="timer" runat="server" name="time"></h4>
         </div>
          <div id="welcome" runat="server">
             <h1 id="opening">Welcome to the Quiz App</h1>
@@ -267,6 +269,8 @@
             <h3>Thanks For Taking The Quiz</h3>
             <p id="P1" runat="server"></p>
             <h2 id="announce" runat="server">Result: </h2>
+            <p id="pnts" runat="server"></p>
+            <p id="nme" runat="server"></p>
         </div>
 
         <footer>
