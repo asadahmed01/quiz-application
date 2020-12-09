@@ -21,6 +21,7 @@
             color:gray;
             
         }
+        #someDiv{height: 75px;}
         #welcome{
             height: 75vh;
         }
@@ -103,7 +104,7 @@
         }
         #result{
             
-            font-size: 35px;
+            font-size: 20px;
             color:lightseagreen;
         }
         table { 
@@ -135,13 +136,15 @@
 
             } else {
                 document.getElementById('timer').innerHTML = timeLeft + ' seconds remaining';
-               <%= --num%>
-                timeLeft--;
+                
+               timeLeft--;
             }
             
         }
     </script>
+
 </head>
+
 <body>
    
 
@@ -149,6 +152,9 @@
    
     
     <form id="form1" runat="server" >
+        
+        
+        <asp:ScriptManager ID="ScriptManager2" runat="server" EnablePageMethods="true"/>
         <div id="someDiv" runat="server">
             <h4 id="some" runat="server"></h4>
             <h4 id="timer" runat="server" name="time"></h4>
@@ -209,6 +215,7 @@
             <asp:RadioButton ID="RadioButton9" GroupName="q2"  runat="server" CssClass="item" /> <br />
             <asp:RadioButton ID="RadioButton10" GroupName="q2" runat="server"  CssClass="item"/><br />
             <asp:RadioButton ID="RadioButton11" GroupName="q2" runat="server" CssClass="item"/><br />
+            <asp:RadioButton ID="RadioButton35" GroupName="q2" runat="server" CssClass="item"/><br />
             <asp:Button runat="server" id="answer4" text="Submit"  OnClick="answer4_Click" CssClass="answer"/>
         </div>
 
@@ -263,6 +270,7 @@
             <asp:RadioButton ID="RadioButton28" GroupName="q2"  runat="server"  CssClass="item"/> <br />
             <asp:RadioButton ID="RadioButton29" GroupName="q2" runat="server"  CssClass="item"/><br />
             <asp:RadioButton ID="RadioButton30" GroupName="q2" runat="server" CssClass="item"/><br />
+            <asp:RadioButton ID="RadioButton36" GroupName="q2" runat="server" CssClass="item"/><br />
             <asp:Button runat="server" id="answer9" text="Submit"  OnClick="answer9_Click" CssClass="answer"/>
         </div>
 
@@ -283,6 +291,8 @@
             <h3>Thanks For Taking The Quiz</h3>
             <p id="P1" runat="server"></p>
             <h2 id="announce" runat="server">Result: </h2>
+            <br />
+            <h2>Leaderboard</h2>
             <asp:PlaceHolder ID="ph1" runat="server"></asp:PlaceHolder>
         </div>
 
