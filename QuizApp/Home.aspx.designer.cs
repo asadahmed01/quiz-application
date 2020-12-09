@@ -843,21 +843,12 @@ namespace QuizApp
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl announce;
 
         /// <summary>
-        /// pnts control.
+        /// ph1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl pnts;
-
-        /// <summary>
-        /// nme control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl nme;
+        protected global::System.Web.UI.WebControls.PlaceHolder ph1;
     }
 }

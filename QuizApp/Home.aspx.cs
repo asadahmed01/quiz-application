@@ -546,16 +546,42 @@ namespace QuizApp
 
         public void loadBoard()
         {
-            string leader = "SELECT points, name from leaderboard";
+            List<LeaderInfo> info = new List<LeaderInfo>(); 
+            string leader = "SELECT points, name from leaderboard ORDER BY POINTS";
             MySqlCommand cmd = new MySqlCommand(leader, newCon);
             MySqlDataReader reader = cmd.ExecuteReader();
             string question = string.Empty;
             while (reader.Read())
             {
-                //question = reader.GetString(0);
-                pnts.InnerHtml = reader.GetString(0);
-                nme.InnerHtml = reader.GetString(1);
+                info.Add(new LeaderInfo
+                {
+                    leaderName = reader["name"].ToString(),
+                    leaderPoints = (int)reader["points"]
+                });
             }
+
+            var sb = new System.Text.StringBuilder();
+
+            sb.Append(@"
+            <table>
+            <tr>
+            <th>Name</th>
+            <th>Points</th>
+            </tr>
+            ");
+
+            foreach (var acc in info)
+            {
+                sb.Append("<tr>");
+                sb.AppendFormat("<td class='cell'>{0}</td>", acc.leaderName);
+                sb.AppendFormat("<td class='cell'>{0}</td>", acc.leaderPoints);
+                sb.Append("</tr>");
+            }
+
+            sb.Append("</table>");
+            string htmlTable = sb.ToString();
+
+            ph1.Controls.Add(new LiteralControl(htmlTable));
             reader.Close();
         }
 
@@ -576,5 +602,13 @@ namespace QuizApp
 
         }
 
+
     }   
+}
+
+
+public class LeaderInfo
+{
+    public string leaderName;
+    public int leaderPoints;
 }

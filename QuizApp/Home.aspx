@@ -106,6 +106,20 @@
             font-size: 35px;
             color:lightseagreen;
         }
+        table { 
+                border-collapse: collapse; 
+            } 
+            th { 
+                background-color:green; 
+                Color:white; 
+            } 
+            th, td { 
+                width:200px; 
+                text-align:center; 
+                border:1px solid black; 
+                padding:5px 
+              
+            } 
        
     </style>
 
@@ -269,8 +283,7 @@
             <h3>Thanks For Taking The Quiz</h3>
             <p id="P1" runat="server"></p>
             <h2 id="announce" runat="server">Result: </h2>
-            <p id="pnts" runat="server"></p>
-            <p id="nme" runat="server"></p>
+            <asp:PlaceHolder ID="ph1" runat="server"></asp:PlaceHolder>
         </div>
 
         <footer>
